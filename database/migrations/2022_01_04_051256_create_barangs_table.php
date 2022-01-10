@@ -15,6 +15,11 @@ class CreateBarangsTable extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('code', 9)->unique();
+            $table->string('namabaju', 15);
+            $table->string('jenisbaju', 6);
+            $table->string('namapenjahit', 11);
+            $table->date('tgl_masuk');
             $table->timestamps();
         });
     }

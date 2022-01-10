@@ -14,7 +14,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return view('barang.index');
+        $barangs = Barang::all();
+        return view('barang.index', ['barangs' => $barangs]);
     }
 
     /**
@@ -24,7 +25,7 @@ class BarangController extends Controller
      */
     public function create()
     {
-        //
+        return view('barang.create');
     }
 
     /**
@@ -35,7 +36,8 @@ class BarangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        barang::create($request->all());
+        return redirect('barang');
     }
 
     /**
