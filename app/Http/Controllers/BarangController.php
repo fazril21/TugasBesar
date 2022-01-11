@@ -18,6 +18,7 @@ class BarangController extends Controller
         return view('barang.index', ['barangs' => $barangs]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
