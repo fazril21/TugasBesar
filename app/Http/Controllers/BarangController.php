@@ -59,7 +59,7 @@ class BarangController extends Controller
      */
     public function edit(Barang $barang)
     {
-        //
+        return view('barang.edit', compact('barang'));
     }
 
     /**
@@ -71,7 +71,8 @@ class BarangController extends Controller
      */
     public function update(Request $request, Barang $barang)
     {
-        //
+        $barang->update($request->all());
+        return redirect('barang');
     }
 
     /**
@@ -82,6 +83,7 @@ class BarangController extends Controller
      */
     public function destroy(Barang $barang)
     {
-        //
+        $barang->delete();
+        return redirect('barang');
     }
 }
