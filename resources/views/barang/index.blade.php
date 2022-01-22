@@ -13,6 +13,7 @@
                 <th>Nama Baju</th>
                 <th>Jenis Baju</th>
                 <th>Nama Penjahit</th>
+                <th>Stock</th>
                 <th>Tanggal Masuk</th>
                 <th colspan=2></th>
             </tr>
@@ -26,6 +27,7 @@
                         <td>{{ $barang->namabaju }}</td>
                         <td>{{ $barang->jenisbaju }}</td>
                         <td>{{ $barang->namapenjahit }}</td>
+                        <td>{{ $barang->stock }}</td>
                         <td>{{ date('d-m-y',strtotime ($barang->tgl_masuk)) }}</td>
                         <td>
                           <a href="{{route('barang.edit', $barang->id)}}" class="btn btn-primary">Edit</a>

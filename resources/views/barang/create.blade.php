@@ -34,6 +34,10 @@
                 <input type="text" class="form-control" name="namapenjahit"/>
             </div>
             <div class="form-group">
+                <label for="name">Stock</label>
+                <input type="text" class="form-control" name="stock"/>
+            </div>
+            <div class="form-group">
                 <label for="name">Tanggal Masuk</label>
                 <input type="date" class="form-control" name="tgl_masuk"/>
             </div>
