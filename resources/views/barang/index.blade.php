@@ -2,10 +2,12 @@
 
 <?php $no=1 ?>
 @section("content")
-    <h3>Data Baju</h3>
-        <a href="{{route('barang.create')}}" class="btn btn-success">Tambah Data</a>
-        
-   <table class="table">
+    <center><h3>Stock Baju</h3></center>
+      <br/> 
+        <a href="{{route('barang.create')}}" class="btn btn-success">Tambah Data  </a>
+
+        <br/>
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>No</th>
@@ -14,7 +16,8 @@
                 <th>Jenis Baju</th>
                 <th>Nama Penjahit</th>
                 <th>Stock</th>
-                <th>Tanggal Masuk</th>
+                
+                
                 <th colspan=2></th>
             </tr>
         </thead>
@@ -28,15 +31,14 @@
                         <td>{{ $barang->jenisbaju }}</td>
                         <td>{{ $barang->namapenjahit }}</td>
                         <td>{{ $barang->stock }}</td>
-                        <td>{{ date('d-m-y',strtotime ($barang->tgl_masuk)) }}</td>
                         <td>
-                          <a href="{{route('barang.edit', $barang->id)}}" class="btn btn-primary">Edit</a>
+                          <button><a href="{{route('barang.edit', $barang->id)}}"><img src="image/edit.png" width="30" title="Edit"></a></button>
                         </td>
                         <td>
                           <form action="{{route('barang.destroy', $barang->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger" type="submit">Delete</button>
+                            <button  type="submit"><img src="image/delete.png" width="30" title="Delete"></button>
                           </form>
                         </td>
                     </tr>

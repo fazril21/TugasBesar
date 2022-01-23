@@ -34,10 +34,7 @@
   <div class="input-group-text">
     <label for="staticEmail" class="col-sm-2 col-form-label">Stock</label>
     <input type="text"  class="form-control-plaintext" name="stock" value="{{$barang->stock}}">  </div>
-  <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Tanggal Masuk</label>
-    <input type="date"  class="form-control-plaintext" name="tgl_masuk" value="{{ date('d-m-y',strtotime ($barang->tgl_masuk))}}">
-  </div>
+  
   <button type="submit" class="btn btn-primary">Simpan</button>
 </form>
 

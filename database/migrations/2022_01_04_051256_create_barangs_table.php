@@ -20,7 +20,6 @@ class CreateBarangsTable extends Migration
             $table->string('jenisbaju', 6);
             $table->string('namapenjahit', 11);
             $table->string('stock', 6);
-            $table->date('tgl_masuk');
             $table->timestamps();
         });
     }
