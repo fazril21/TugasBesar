@@ -11,7 +11,6 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Kode Baju</th>
                 <th>Nama Baju</th>
                 <th>XS</th>
                 <th>S</th>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\masuk;
+use App\Barang;
 use Illuminate\Http\Request;
 
 class MasukController extends Controller
@@ -24,7 +25,8 @@ class MasukController extends Controller
      */
     public function create()
     {
-        //
+        $barangs = Barang::all();
+        return view('masuk.create', compact('barangs'));
     }
 
     /**
@@ -35,7 +37,8 @@ class MasukController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Barang::create($request->all());
+        return redirect('masuk');
     }
 
     /**

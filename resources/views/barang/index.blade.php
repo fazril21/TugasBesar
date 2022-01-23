@@ -11,10 +11,8 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Kode Baju</th>
                 <th>Nama Baju</th>
                 <th>Jenis Baju</th>
-                <th>Nama Penjahit</th>
                 <th>Stock</th>
                 
                 
@@ -26,10 +24,8 @@
                 @foreach ($barangs as $barang)
                     <tr>
                         <td>{{ $no++ }}</td>
-                        <td>{{ $barang->code }}</td>
                         <td>{{ $barang->namabaju }}</td>
                         <td>{{ $barang->jenisbaju }}</td>
-                        <td>{{ $barang->namapenjahit }}</td>
                         <td>{{ $barang->stock }}</td>
                         <td>
                           <button><a href="{{route('barang.edit', $barang->id)}}"><img src="image/edit.png" width="30" title="Edit"></a></button>

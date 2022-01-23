@@ -16,11 +16,7 @@
 
         <form method="POST" action="{{ route('barang.store') }}">
             @csrf
-            
-            <div class="form-group">
-                <label for="name">Kode Baju</label>
-                <input type="text" class="form-control" name="code"/>
-            </div>
+          
             <div class="form-group">
                 <label for="name">Nama Baju</label>
                 <input type="text" class="form-control" name="namabaju"/>
@@ -28,10 +24,6 @@
             <div class="form-group">
                 <label for="name">Jenis Baju</label>
                 <input type="text" class="form-control" name="jenisbaju"/>
-            </div>
-            <div class="form-group">
-                <label for="name">Nama Penjahit</label>
-                <input type="text" class="form-control" name="namapenjahit"/>
             </div>
             <div class="form-group">
                 <label for="name">Stock</label>
