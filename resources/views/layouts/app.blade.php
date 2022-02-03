@@ -47,7 +47,7 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                           <li><a class="dropdown-item" href="{{route('barang.index')}}">Stock</a></li>
                           <li><a class="dropdown-item" href="{{route('masuk.index')}}">Barang Masuk</a></li>
-                          <li><a class="dropdown-item" href="#">Barang Keluar</a></li>
+                          <li><a class="dropdown-item" href="{{route('keluar.index')}}">Barang Keluar</a></li>
                         </ul>
                       </li>
                     </ul>

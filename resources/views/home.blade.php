@@ -7,7 +7,7 @@
         <img src="image/1.webp" class="d-block w-100" alt="First Slide">
       </div>
       <div class="carousel-item">
-        <img src="image/2.webp" class="d-block w-100" alt="Second Slide">
+        <img src="image/2.webp" class="d-block w-100" alt="Second Slide" >
       </div>
       <div class="carousel-item">
         <img src="image/3.webp" class="d-block w-100" alt="Third Slide">

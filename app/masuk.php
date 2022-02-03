@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class masuk extends Model
+class Masuk extends Model
 {
-    protected $fillable = ['x', 'xs', 'm', 'l', 'xl', 'xxl', 'barang_id'];
+    protected $fillable = ['xs', 'x', 'm', 'l', 'xl', 'xxl', 'jumlah', 'namapenjahit', 'tglmasuk', 'barang_id'];
 
-    public function faculty()
+    public function barang()
     {
-        return $this->belongsTo('App\barang', 'faculty_id', 'id');
+        return $this->belongsTo('App\Barang', 'barang_id', 'id');
     }
 }

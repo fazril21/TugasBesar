@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 Route::resource('barang', 'BarangController');
 Route::resource('masuk', 'MasukController');
+Route::resource('keluar', 'KeluarController');
 
 Auth::routes();
 

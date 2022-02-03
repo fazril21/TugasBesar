@@ -4,8 +4,9 @@
 @section("content")
     <center><h3>Barang Masuk</h3></center>
       <br/> 
+        <div>
         <a href="{{route('masuk.create')}}" class="btn btn-success">Tambah Data  </a>
-
+        </div>
         <br/>
         <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
@@ -29,21 +30,31 @@
         </thead>
         <tbody>
             <tr>
-                {{-- @foreach ($masuks as $masuk)
+                @foreach ($masuks as $masuk)
                     <tr>
-                        
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $masuk->barang->namabaju }}</td>
+                        <td>{{ $masuk->xs }}</td>
+                        <td>{{ $masuk->x }}</td>
+                        <td>{{ $masuk->m }}</td>
+                        <td>{{ $masuk->l }}</td>
+                        <td>{{ $masuk->xl }}</td>
+                        <td>{{ $masuk->xxl }}</td>
+                        <td>{{ $masuk->jumlah }}</td>
+                        <td>{{ $masuk->namapenjahit }}</td>
+                        <td>{{ $masuk->tglmasuk }}</td>                      
                         <td>
-                          <button><a href="{{route('masuk.edit', $barang->id)}}"><img src="image/edit.png" width="30" title="Edit"></a></button>
+                          <button><a href="{{route('masuk.edit', $masuk->id)}}"><img src="image/edit.png" width="30" title="Edit"></a></button>
                         </td>
                         <td>
-                          <form action="{{route('masuk.destroy', $barang->id)}}" method="post">
+                          <form action="{{route('masuk.destroy', $masuk->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button  type="submit"><img src="image/delete.png" width="30" title="Delete"></button>
                           </form>
                         </td>
                     </tr>
-                @endforeach --}}
+                @endforeach
             </tr>
           </tbody>
    </table>

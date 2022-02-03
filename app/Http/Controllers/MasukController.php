@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\masuk;
+use App\Masuk;
 use App\Barang;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,8 @@ class MasukController extends Controller
      */
     public function index()
     {
-        return view('masuk.index');
+        $masuks = Masuk::all();
+        return view('masuk.index', ['masuks' => $masuks]);
     }
 
     /**
@@ -37,17 +38,43 @@ class MasukController extends Controller
      */
     public function store(Request $request)
     {
-        Barang::create($request->all());
+        $this->validate($request, [
+            'xs'     => 'required',
+            'x'    => 'required',
+            'm'            => 'required',
+            'l'        => 'required',
+            'xl'        => 'required',
+            'xxl'        => 'required',
+            'jumlah'        => 'required',
+            'namapenjahit'        => 'required',
+            'tglmasuk'        => 'required',
+            'barang_id'        => 'required'
+
+        ]);
+
+        Masuk::create($request->all());
+        $barang = Barang::findOrFail($request->barang_id);
+        $barang->xs += $request->xs;
+        $barang->x += $request->x;
+        $barang->m += $request->m;
+        $barang->l += $request->l;
+        $barang->xl += $request->xl;
+        $barang->xxl += $request->xxl;
+        $barang->jumlah += $request->jumlah;
+        $barang->save();
+
+       
+        
         return redirect('masuk');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\masuk  $masuk
+     * @param  \App\Masuk  $masuk
      * @return \Illuminate\Http\Response
      */
-    public function show(masuk $masuk)
+    public function show(Masuk $masuk)
     {
         //
     }
@@ -55,34 +82,36 @@ class MasukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\masuk  $masuk
+     * @param  \App\Masuk  $masuk
      * @return \Illuminate\Http\Response
      */
-    public function edit(masuk $masuk)
+    public function edit(Masuk $masuk)
     {
-        //
+        return view('masuk.edit', compact('masuk'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\masuk  $masuk
+     * @param  \App\Masuk  $masuk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, masuk $masuk)
+    public function update(Request $request, Masuk $masuk)
     {
-        //
+        $masuk->update($request->all());
+        return redirect('masuk');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\masuk  $masuk
+     * @param  \App\Masuk  $masuk
      * @return \Illuminate\Http\Response
      */
-    public function destroy(masuk $masuk)
+    public function destroy(Masuk $masuk)
     {
-        //
+        $masuk->delete();
+        return redirect('masuk');
     }
 }

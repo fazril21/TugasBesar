@@ -13,27 +13,37 @@
         </div><br />
         
     @endif
-<form method="POST" action="{{ route('barang.update',$barang->id)}}">
+<form method="POST" action="{{ route('masuk.update',$masuk->id)}}">
     @csrf
     @method('put')
-  <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Kode Baju</label>
-    <input type="text"  class="form-control-plaintext" name="code" value="{{$barang->code}}">
+    <div class="form-group">
+      <label for="name">XS</label>
+      <input type="text" class="form-control" name="xs" value="{{$masuk->xs}}"/>
   </div>
-  <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Nama Baju</label>
-    <input type="text"  class="form-control-plaintext" name="namabaju" value="{{$barang->namabaju}}">
+  <div class="form-group">
+      <label for="name">X</label>
+      <input type="text" class="form-control" name="x" value="{{$masuk->x}}"/>
   </div>
-  <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Nama Penjahit</label>
-    <input type="text"  class="form-control-plaintext" name="namapenjahit" value="{{$barang->namapenjahit}}">
+  <div class="form-group">
+      <label for="name">M</label>
+      <input type="text" class="form-control" name="m" value="{{$masuk->m}}"/>
   </div>
-  <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Jenis Baju</label>
-    <input type="text"  class="form-control-plaintext" name="jenisbaju" value="{{$barang->jenisbaju}}">  </div>
-  <div class="input-group-text">
-    <label for="staticEmail" class="col-sm-2 col-form-label">Stock</label>
-    <input type="text"  class="form-control-plaintext" name="stock" value="{{$barang->stock}}">  </div>
+  <div class="form-group">
+      <label for="name">L</label>
+      <input type="text" class="form-control" name="l" value="{{$masuk->l}}"/>
+  </div>
+  <div class="form-group">
+      <label for="name">XL</label>
+      <input type="text" class="form-control" name="xl" value="{{$masuk->xl}}"/>
+  </div>
+  <div class="form-group">
+      <label for="name">XXL</label>
+      <input type="text" class="form-control" name="xxl" value="{{$masuk->xxl}}"/>
+  </div>
+  <div class="form-group">
+      <label for="name">Jumlah</label>
+      <input type="text" class="form-control" name="jumlah" value="{{$masuk->jumlah}}"/>
+  </div>
   
   <button type="submit" class="btn btn-primary">Simpan</button>
 </form>

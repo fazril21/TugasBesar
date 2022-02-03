@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="col-md-8 offset-md-2">
-        <h3>Tambah Fakultas</h3>
+        <h3>Tambah Baju</h3>
 
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -26,10 +26,33 @@
                 <input type="text" class="form-control" name="jenisbaju"/>
             </div>
             <div class="form-group">
-                <label for="name">Stock</label>
-                <input type="text" class="form-control" name="stock"/>
+                <label for="name">XS</label>
+                <input type="text" class="form-control" name="xs"/>
             </div>
-            
+            <div class="form-group">
+                <label for="name">X</label>
+                <input type="text" class="form-control" name="x"/>
+            </div>
+            <div class="form-group">
+                <label for="name">M</label>
+                <input type="text" class="form-control" name="m"/>
+            </div>
+            <div class="form-group">
+                <label for="name">L</label>
+                <input type="text" class="form-control" name="l"/>
+            </div>
+            <div class="form-group">
+                <label for="name">XL</label>
+                <input type="text" class="form-control" name="xl"/>
+            </div>
+            <div class="form-group">
+                <label for="name">XXL</label>
+                <input type="text" class="form-control" name="xxl"/>
+            </div>
+            <div class="form-group">
+                <label for="name">Jumlah</label>
+                <input type="text" class="form-control" name="jumlah"/>
+            </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
     </div>
