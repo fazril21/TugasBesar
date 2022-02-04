@@ -39,28 +39,15 @@ class KeluarController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'xs'     => 'required',
-            'x'    => 'required',
-            'm'            => 'required',
-            'l'        => 'required',
-            'xl'        => 'required',
-            'xxl'        => 'required',
             'jumlah'        => 'required',
-            'namapenjahit'        => 'required',
-            'tglmasuk'        => 'required',
+            'tglkeluar'        => 'required',
             'barang_id'        => 'required'
 
         ]);
 
         keluar::create($request->all());
         $barang = Barang::findOrFail($request->barang_id);
-        $barang->xs += $request->xs;
-        $barang->x += $request->x;
-        $barang->m += $request->m;
-        $barang->l += $request->l;
-        $barang->xl += $request->xl;
-        $barang->xxl += $request->xxl;
-        $barang->jumlah += $request->jumlah;
+        $barang->jumlah -= $request->jumlah;
         $barang->save();
 
        

@@ -20,7 +20,7 @@
                 <th>XL</th>
                 <th>XXL</th>               
                 <th>Jumlah</th>
-                <th>Nama Penjahit</th>
+                <th>Penjahit</th>
                 <th>Tanggal Masuk</th>
             
                 

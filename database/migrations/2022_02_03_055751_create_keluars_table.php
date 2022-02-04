@@ -15,6 +15,9 @@ class CreateKeluarsTable extends Migration
     {
         Schema::create('keluars', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('jumlah', 4);
+            $table->date('tglkeluar');
+            $table->integer('barang_id')->nullable();
             $table->timestamps();
         });
     }

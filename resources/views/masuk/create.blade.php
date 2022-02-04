@@ -2,7 +2,7 @@
 
 @section("content")
     <div class="col-md-8 offset-md-2">
-        <h3>Tambah Fakultas</h3>
+        <h3>Tambah Barang Masuk</h3>
 
         <form method="POST" action="{{ route('masuk.store') }}">
             @csrf
@@ -43,7 +43,7 @@
                 <input type="text" class="form-control" name="jumlah"/>
             </div>
             <div class="form-group">
-                <label for="name">Nama Penjahit</label>
+                <label for="name"> Penjahit</label>
                 <input type="text" class="form-control" name="namapenjahit"/>
             </div>
             <div class="input-group-text">
